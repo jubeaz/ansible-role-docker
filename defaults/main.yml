@@ -1,6 +1,8 @@
 ---
 # defaults file for docker
-docker0_net: "192.168.3.1/24"
+docker0_net: "192.168.0.1/16"
+docker_data_root: /mnt/docker
 docker_user_list: []
-
-
+docker_sockets: [ "-H unix:///var/run/docker.sock"
+  , "-H tcp://0.0.0.0:4243"
+]

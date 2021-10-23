@@ -1,3 +1,4 @@
+{{ ansible_managed | comment }}
 [Service]
 ExecStart=
-ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:4243
+ExecStart=/usr/bin/dockerd {{ docker_sockets |join(" ") }}
