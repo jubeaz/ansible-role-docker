@@ -34,13 +34,13 @@
     owner: root
     group: root
     mode: 0644
-      #notify:
-      #- Reload systemd
-      #- Start and enable docker
-      #- Start and enable containerd
+  notify:
+    - Reload systemd
+    - Start and enable docker
+    - Start and enable containerd
 - name: Add users to docker group
   user:
     name: "{{ item }}"
-    append: yes
+    append: true
     groups: docker
   with_items: "{{ docker_user_list }}"
