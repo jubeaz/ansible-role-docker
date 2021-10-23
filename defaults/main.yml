@@ -1,0 +1,6 @@
+---
+# defaults file for docker
+docker0_net: "192.168.3.1/24"
+docker_user_list: []
+
+
